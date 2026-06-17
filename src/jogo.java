@@ -1,11 +1,16 @@
 import Strategy.*;
 
 public class jogo {
+    private Sorteador sorteador;
+    private Carta comportamento;
 
-        public static void chutarPorta() {
-            Sorteador sorteador = new Sorteador();
-            Carta cartaSorteada = sorteador.sortear();
+    public jogo() {
+        sorteador = new Sorteador();
+    }
 
-            cartaSorteada.classificar();
-        }
+    // set strategy
+    public void chutarPorta() {
+        comportamento = sorteador.sortear();
+        comportamento.classificar();
+    }
 }
